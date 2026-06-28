@@ -1,6 +1,14 @@
 const express = require('express');
 const cors = require('cors');
 
+app.use(cors({
+  origin: [
+    'http://localhost:5173',
+    'https://flowtrack-plum.vercel.app'
+  ],
+  credentials: true
+}));
+
 const authRoutes = require('./routes/authRoutes');
 const projectRoutes = require('./routes/projectRoutes');
 const storyRoutes = require('./routes/storyRoutes');
