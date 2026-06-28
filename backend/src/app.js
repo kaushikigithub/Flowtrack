@@ -2,11 +2,21 @@ const express = require('express');
 const cors = require('cors');
 
 app.use(cors({
-  origin: [
-    'http://localhost:5173',
-    'https://flowtrack-plum.vercel.app'
-  ],
-  credentials: true
+  origin: (origin, callback) => {
+    if (!origin) return callback(null, true); // allow tools like Postman/curl with no origin
+    
+    const allowed =
+      origin === 'http://localhost:5173' ||
+      origin === process.env.FRONTEND_URL ||
+      /^https:\/\/flowtrack.*\.vercel\.app$/.test(origin);
+
+    if (allowed) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true,
 }));
 
 const authRoutes = require('./routes/authRoutes');
