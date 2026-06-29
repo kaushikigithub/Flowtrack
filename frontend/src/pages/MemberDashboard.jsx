@@ -6,6 +6,7 @@ import Navbar from '../components/Navbar';
 import KPICard from '../components/KPICard';
 import PriorityBadge from '../components/PriorityBadge';
 import StatusBadge from '../components/StatusBadge';
+import SkeletonCard from '../components/SkeletonCard';
 
 function MemberDashboard() {
   const { user } = useAuth();
