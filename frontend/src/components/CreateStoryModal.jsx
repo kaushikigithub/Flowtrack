@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { motion } from 'framer-motion'; 
+import toast from 'react-hot-toast';
 import { X } from 'lucide-react';
 import axiosInstance from '../api/axiosInstance';
 import Button from './Button';

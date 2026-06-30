@@ -6,6 +6,7 @@ import PriorityBadge from './PriorityBadge';
 import StatusBadge from './StatusBadge';
 import TaskItem from './TaskItem';
 import Button from './Button';
+import toast from 'react-hot-toast';
 
 function StoryCard({ story, users, onStoryDeleted, onAddTaskClick }) {
   const { isManager } = useAuth();

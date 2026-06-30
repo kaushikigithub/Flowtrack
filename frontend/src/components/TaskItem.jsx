@@ -3,6 +3,8 @@ import { Calendar, User, Trash2 } from 'lucide-react';
 import axiosInstance from '../api/axiosInstance';
 import { useAuth } from '../context/AuthContext';
 import PriorityBadge from './PriorityBadge';
+import Avatar from './Avatar';
+import toast from 'react-hot-toast';
 
 function TaskItem({ task, users, onTaskUpdated, onTaskDeleted }) {
   const { isManager } = useAuth();
